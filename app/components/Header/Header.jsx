@@ -8,12 +8,15 @@ import {
 import React from "react";
 import LoginButton from "./LoginButton";
 import AuthContextProvider from "@/lib/contexts/AuthContext";
+import logo from '../../assets/images/logo.png'
+import Image from "next/image";
 
 export default function Header() {
   return (
     <nav className="px-7 py-6 border-b flex justify-center ">
       <div className="w-full max-w-5xl mx-auto flex gap-3 items-center justify-between">
-        <img src="/logo.png" className="h-8" alt="Logo" />
+        <Image src={logo} width={160} height={16} className="h-8" alt="Logo" />
+        
         <ul className="lg:flex gap-6 items-center hidden ">
           <li className="flex items-center gap-2">
             <HouseIcon />
