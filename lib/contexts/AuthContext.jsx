@@ -3,10 +3,13 @@
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../firebase";
+import { redirect } from "next/dist/server/api-utils";
+import { useRouter } from "next/navigation";
 
 const AuthContext = createContext();
 
 export default function AuthContextProvider({ children }) {
+    const { push } = useRouter();
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -16,6 +19,7 @@ export default function AuthContextProvider({ children }) {
         const unsub = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
+                push('/admin');
             } else {
                 setUser(null);
             }
@@ -28,7 +32,7 @@ export default function AuthContextProvider({ children }) {
         setIsLoading(true)
         try {
             await signInWithPopup(auth, new GoogleAuthProvider());
-            revalidatePath('/admin')
+            
         } catch (error) {
             setError(error?.message)
         }
