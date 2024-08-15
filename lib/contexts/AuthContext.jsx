@@ -28,6 +28,7 @@ export default function AuthContextProvider({ children }) {
         setIsLoading(true)
         try {
             await signInWithPopup(auth, new GoogleAuthProvider());
+            revalidatePath('/admin')
         } catch (error) {
             setError(error?.message)
         }
