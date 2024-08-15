@@ -3,7 +3,6 @@
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../firebase";
-import { redirect } from "next/dist/server/api-utils";
 import { useRouter } from "next/navigation";
 
 const AuthContext = createContext();
