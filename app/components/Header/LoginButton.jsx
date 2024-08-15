@@ -2,6 +2,7 @@
 
 import { useAuth } from "@/lib/contexts/AuthContext";
 import { LogOut } from "lucide-react";
+import Image from "next/image";
 
 export default function LoginButton() {
   const {user, isLoading, error, handleSignInWithGoogle, handleLogout  } = useAuth();
@@ -35,7 +36,7 @@ export default function LoginButton() {
         handleSignInWithGoogle();
       }}
        className="flex items-center gap-2 bg-[#1B202A]/90 text-white rounded-full px-4 py-2 hover:bg-[#0F0FD1] duration-300 ">
-        <img className="w-7" src="/google.webp" alt="" />
+        <img className="w-7" src="https://firebasestorage.googleapis.com/v0/b/bloggg-8cd30.appspot.com/o/Google.webp?alt=media&token=f95d6e45-26bb-440b-83bf-acd750fa0005" alt="" />
         Login with google
       </button>
     </section>
