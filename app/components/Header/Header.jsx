@@ -1,10 +1,3 @@
-import {
-  Contact,
-  Grid2X2,
-  HouseIcon,
-  ListIcon,
-  MessageCircle,
-} from "lucide-react";
 import React from "react";
 import LoginButton from "./LoginButton";
 import AuthContextProvider from "@/lib/contexts/AuthContext";
@@ -26,16 +19,15 @@ export default function Header() {
         </Link>
 
         <ul className="lg:flex gap-6 items-center hidden ">
-          <li className="flex items-center gap-2">
-            <HouseIcon />
+          <li className="">
+            <Link className="flex items-center gap-2 " href={'/'}>
             Home
+            </Link>
           </li>
           <li className="flex items-center gap-2">
-            <Grid2X2 />
             Blog
           </li>
           <li className="flex items-center gap-2">
-            <MessageCircle />
             Contact Us
           </li>
         </ul>

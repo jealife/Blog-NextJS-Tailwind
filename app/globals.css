@@ -10,3 +10,6 @@
 body,*{
   scroll-behavior: smooth !important;
 }
+.active{
+  color:#0F0FD1;
+}

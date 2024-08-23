@@ -2,16 +2,18 @@
 
 import { useAuth } from "@/lib/contexts/AuthContext";
 import { LogOut } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function LoginButton() {
+  const router = useRouter();
   const { user, isLoading, error, handleSignInWithGoogle, handleLogout } =
     useAuth();
   if (isLoading) {
     return <h2>Loading...</h2>;
   }
   if (user) {
+    router.push('/admin');
     return (
       <div className="flex items-center gap-3  justify-end">
         <button
@@ -37,11 +39,15 @@ export default function LoginButton() {
       </div>
     );
   }
+  if (router.pathname === "/admin") {
+    router.push("/login"); // Redirect to login page if user tries to access "/admin" directly
+  }
   return (
     <section>
       <button
         onClick={() => {
           handleSignInWithGoogle();
+          
         }}
         className="text-xs flex items-center gap-2 bg-[#1B202A]/90 text-white rounded-full px-4 py-2 hover:bg-[#0F0FD1] duration-300 "
       >
