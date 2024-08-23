@@ -8,7 +8,7 @@ export default function WelcomMessage() {
     if(user){
         return(
           <div className="flex items-center gap-5 flex-row-reverse justify-end">
-            <h2 className="font-bold text-4xl text-center">
+            <h2 className="font-bold lg:text-4xl text-xl text-center">
                 Welcome, {user?.displayName}
             </h2>
           </div>
