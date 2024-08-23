@@ -13,7 +13,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <nav className="px-7 py-6 border-b flex justify-center ">
+    <nav className="px-7 py-6 border-b flex justify-center z-50 " id="nav">
       <div className="w-full max-w-5xl mx-auto flex gap-3 items-center justify-between">
         <Link href={'/'}>
           <Image
