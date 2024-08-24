@@ -1,11 +1,11 @@
 import React from 'react'
-import LoginButton from '../components/Header/LoginButton'
 import AuthContextProvider from '@/lib/contexts/AuthContext'
+import LoginFormButton from '../components/Header/LoginFormButton'
 
 export default function LoginForm() {
   return (
     <AuthContextProvider>
-    <LoginButton />
+    <LoginFormButton />
   </AuthContextProvider>
   )
 }
